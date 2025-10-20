@@ -1,4 +1,4 @@
-# Programarea Algoritmilor – Tutorial 1
+# Programarea Algoritmilor – Tutoriat 1
 
 
 ## 1. Introducere în Python
