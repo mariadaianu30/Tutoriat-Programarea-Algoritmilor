@@ -161,56 +161,6 @@ else:
 | `type()`, `isinstance()` | verificare tip | `isinstance(3, int)` |
 
 
-## 8. Probleme 
-
-1️⃣ Paritate
-```python
-n = int(input("n = "))
-print("Par" if n % 2 == 0 else "Impar")
-```
-
-
-2️⃣ Maximul dintre 3 numere
-```python
-a, b, c = map(int, input("a b c = ").split())
-print("Maximul este", max(a, b, c))
-```
-
-
-3️⃣ Factorial
-```python
-n = int(input("n = "))
-f = 1
-for i in range(1, n + 1):
-    f *= i
-print(f"{n}! = {f}")
-```
-
-
-4️⃣ Număr prim
-```python
-n = int(input("n = "))
-for d in range(2, n // 2 + 1):
-    if n % d == 0:
-        print("Nu e prim")
-        break
-else:
-    print("Este prim")
-```
-
-
-5️⃣ Suma numerelor pozitive până la 0
-```python
-s = 0
-while True:
-    x = int(input("x = "))
-    if x == 0:
-        break
-    s += x
-print("Suma =", s)
-```
-
-
 
 # Programarea Algoritmilor - Curs 03: Șiruri de Caractere și Fișiere Text în Python
 
