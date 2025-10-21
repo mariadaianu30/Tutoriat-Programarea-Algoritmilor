@@ -1,4 +1,4 @@
-# Proramarea-Algoritmilor
+# Programarea-Algoritmilor
 
 ### marti, 16-18, L.506
 
