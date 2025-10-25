@@ -364,7 +364,7 @@ Elementele se accesează prin indici.
 
 
 
-##  7.6.Funcții utile  
+##  7.6.Metode utile  
 
 | Categorie | Metodă | Descriere |
 | :--- | :--- | :--- |
