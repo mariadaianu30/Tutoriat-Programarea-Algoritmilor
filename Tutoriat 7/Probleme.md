@@ -38,7 +38,7 @@ negru și eticheta "legatura noua" și să se afișeze legăturile memorate în 
 legăturile).
 
 
-##Iesire
+## Iesire
 
 
 ```python
@@ -59,7 +59,7 @@ pentru punctele primite ca parametru). Punctele din lista returnată vor fi ordo
 descrescător după a doua coordonată. Apelați funcția pentru punctele (2,7) și (1,2) și afișați
 rezultatul obținut.
 
-##Iesire
+## Iesire
 
 ```python
 [(3, 8), (1, 3)]
