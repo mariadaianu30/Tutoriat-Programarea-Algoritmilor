@@ -11,8 +11,10 @@ reprezintă culoarea și eticheta asociate legăturii. Vom spune că legătura e
 [x1,y1] și [x2,y2], vom numi punctele [x1,y1] și [x2,y2] capetele legăturii (legătura este
 neorientată și bidirecțională) și cele două puncte sunt vecine. Un exemplu de fișier de acest
 tip este următorul:
+
+## legaturi.in
 ```python
-legaturi.in
+
 [1,2] [1,3] rosu legatura 1
 [1,2] [1,4] albastru legatura 2
 [1,3] [2,6] rosu legatura 3
@@ -35,8 +37,12 @@ negru și eticheta "legatura noua" și să se afișeze legăturile memorate în 
 în același format în care s-au dat și datele în fișier (nu contează ordinea în care se vor afișa
 legăturile).
 
+
+##Iesire
+
+
 ```python
-ieșire
+
 [1,2] [1,3] rosu legatura 1
 [1,2] [1,4] albastru legatura 2
 [1,3] [2,6] rosu legatura 3
@@ -53,7 +59,8 @@ pentru punctele primite ca parametru). Punctele din lista returnată vor fi ordo
 descrescător după a doua coordonată. Apelați funcția pentru punctele (2,7) și (1,2) și afișați
 rezultatul obținut.
 
+##Iesire
+
 ```python
-ieșire
 [(3, 8), (1, 3)]
 ```
