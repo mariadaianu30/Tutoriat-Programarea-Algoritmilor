@@ -1,24 +1,7 @@
 # Rezolvări Probleme
 
-### Problema 1 (2022)
-<img src="pb1-2022.png" width="600">
 
-**Fișier intrare: `legaturi.in`**
-```text
-[1,2] [1,3] rosu legatura 1
-[1,2] [1,4] albastru legatura 2
-[1,3] [2,6] rosu legatura 3
-[2,6] [2,7] albastru legatura 4
-[2,7] [3,8] rosu legatura 5
-```
-
-<br>
-
-
-
----
-
-### Problema 2 (2021)
+### Problema 1 (2021)
 <img src="pb2-2021.png" width="600">
 
 **Fișier intrare: `autori.in`**
@@ -36,6 +19,24 @@
 20 111 2017 50 Initiere in programare
 ```
 <br>
+
+
+---
+
+### Problema 2 (2022)
+<img src="pb1-2022.png" width="600">
+
+**Fișier intrare: `legaturi.in`**
+```text
+[1,2] [1,3] rosu legatura 1
+[1,2] [1,4] albastru legatura 2
+[1,3] [2,6] rosu legatura 3
+[2,6] [2,7] albastru legatura 4
+[2,7] [3,8] rosu legatura 5
+```
+
+<br>
+
 
 ---
 
