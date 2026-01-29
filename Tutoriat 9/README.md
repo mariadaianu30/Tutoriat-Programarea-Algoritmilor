@@ -217,3 +217,248 @@ Dacă o problemă cere:
 
 => **Programarea Dinamică este prima tehnică de luat în considerare.**
 
+
+------
+
+# Backtracking 
+
+## Ce este Backtracking?
+
+**Backtracking** este o tehnică de programare folosită pentru:
+- generarea tuturor soluțiilor unei probleme
+- evitarea explorării soluțiilor care sigur nu pot duce la un rezultat valid
+
+ Ideea principală:
+> Construim soluția **pas cu pas** și abandonăm imediat o soluție parțială
+> dacă observăm că nu poate deveni soluție finală.
+
+Astfel, evităm o rezolvare de tip **forță brută**.
+
+---
+
+## Noțiuni importante
+
+- **Soluție parțială**  
+  O soluție incompletă care respectă condițiile problemei până la acel moment.
+
+- **Soluție finală**  
+  O soluție parțială completă care îndeplinește toate condițiile.
+
+- **Condiții de continuare**  
+  Condiții care spun dacă are sens să mai extindem soluția curentă.
+
+---
+
+## Forma generală a unui algoritm Backtracking
+
+```python
+def back(k):
+    for valoare in valori_posibile:
+        sol[k] = valoare
+        if solutie_partiala_valida(sol, k):
+            if solutie_completa(sol, k):
+                prelucreaza_solutia(sol)
+            else:
+                back(k + 1)
+```
+
+### Ideea generală
+
+- `k` = poziția curentă în soluție  
+- `sol` = soluția construită pas cu pas  
+
+La fiecare pas:
+- încercăm o valoare
+- verificăm dacă soluția parțială este validă
+- continuăm sau ne întoarcem (backtrack)
+
+---
+
+## Exemplul 1 – Generarea permutărilor (clasic)
+
+**Problemă:**  
+Generăm toate permutările mulțimii `{1, 2, ..., n}`.
+
+**Condiție:**
+- toate valorile trebuie să fie distincte
+
+```python
+def back(k):
+    for v in range(1, n + 1):
+        sol[k] = v
+        if v not in sol[:k]:
+            if k == n:
+                print(*sol[1:])
+            else:
+                back(k + 1)
+
+n = int(input())
+sol = [0] * (n + 1)
+back(1)
+```
+
+**Complexitate:** `O(n!)`  
+(deoarece se afișează `n!` permutări)
+
+---
+
+## Exemplul 2 – Combinări (fără ordine)
+
+**Problemă:**  
+Generăm toate submulțimile cu `m` elemente din mulțimea `{1, 2, ..., n}`.
+
+**Idee simplă:**
+- generăm elementele în **ordine crescătoare**
+- evităm duplicatele alegând fiecare element mai mare decât precedentul
+
+```python
+def back(k):
+    for v in range(sol[k - 1] + 1, n + 1):
+        sol[k] = v
+        if k == m:
+            print(*sol[1:])
+        else:
+            back(k + 1)
+
+n = int(input())
+m = int(input())
+sol = [0] * (m + 1)
+back(1)
+```
+---
+
+## Exemplu 3 – Generarea codurilor PIN (Backtracking)
+
+### Problema
+
+Se dau două numere naturale:
+- `n` – lungimea codului PIN
+- `p` – numărul maxim de apariții ale unei cifre
+
+Trebuie generate **toate codurile PIN** care respectă următoarele condiții:
+- codul are exact `n` cifre
+- cifrele sunt din intervalul `1..9`
+- nu există două cifre alăturate egale
+- fiecare cifră apare de **cel mult `p` ori**
+
+La final se afișează și **numărul total de coduri** generate.
+
+---
+
+### Ideea de Backtracking
+
+Construim codul cifră cu cifră:
+- `sol` = codul construit până acum (soluție parțială)
+- `cnt[d]` = de câte ori a fost folosită cifra `d`
+
+La fiecare pas:
+1. încercăm o cifră `d` între `1` și `9`
+2. verificăm condițiile:
+   - `d` ≠ ultima cifră din `sol`
+   - `cnt[d] < p`
+3. dacă este validă, continuăm recursiv
+4. după revenire, refacem starea (backtrack)
+
+---
+
+### Cod Python 
+
+```python
+def back():
+    # Solutie completa
+    if len(sol) == n:
+        print("".join(map(str, sol)))
+        total[0] += 1
+        return
+
+    for d in range(1, 10):
+        # Nu permitem doua cifre alaturate egale
+        if sol and sol[-1] == d:
+            continue
+
+        # O cifra apare cel mult p ori
+        if cnt[d] == p:
+            continue
+
+        # Alegem cifra d
+        sol.append(d)
+        cnt[d] += 1
+
+        # Continuam constructia
+        back()
+
+        # Revenim (backtracking)
+        cnt[d] -= 1
+        sol.pop()
+
+
+# Date de intrare
+n, p = map(int, input().split())
+
+sol = []
+cnt = [0] * 10
+total = [0]
+
+back()
+
+print("Numar total coduri:", total[0])
+```
+
+## Observații despre complexitate
+
+- Algoritmii de tip **Backtracking** au, în general, **complexitate mare**.
+- Timpul de execuție este proporțional cu:
+
+> **numărul de soluții generate**
+
+Cu cât există mai multe soluții valide, cu atât algoritmul va rula mai mult.
+
+### Exemple uzuale de complexitate
+
+- **Permutări** → `O(n!)`  
+  (toate aranjamentele posibile ale celor `n` elemente)
+
+- **Combinări** → `O(C(n, m))`  
+  (numărul de submulțimi de `m` elemente din `n`)
+
+- **Coduri PIN cu restricții** →  
+  depinde de restricții (`n`, `p`, condiții pe vecinătate),  
+  dar este **exponențial** în cel mai defavorabil caz.
+
+---
+
+## Avantaje și dezavantaje ale Backtracking-ului
+
+### Avantaje
+- ușor de implementat
+- foarte clar logic
+- permite generarea **tuturor soluțiilor**
+- elimină rapid soluțiile imposibile
+
+### Dezavantaje
+- consum mare de timp
+- nu este potrivit pentru valori mari ale lui `n`
+- trebuie folosit doar când alte tehnici (Greedy / DP) nu se potrivesc
+
+---
+
+## Când folosim Backtracking?
+
+✔ când trebuie să generăm **toate soluțiile**  
+✔ când există **restricții clare**  
+✔ când dimensiunea problemei este mică  
+
+❌ nu se folosește pentru input mare  
+❌ nu se folosește pentru optimizare simplă (unde DP e mai bun)
+
+---
+
+## Concluzie
+
+Backtracking este o tehnică fundamentală în Programarea Algoritmilor care:
+
+- construiește soluții **pas cu pas**
+- verifică permanent validitatea soluțiilor parțiale
+- elimină ramurile inutile din căutare
+---
+

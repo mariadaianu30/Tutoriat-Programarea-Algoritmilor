@@ -41,11 +41,42 @@
     * Principiul alegerii optimului local.
     * Probleme clasice: **Rucsacul Fracționar**, **Planificarea Spectacolelor**.
     * Limitări și demonstrarea corectitudinii. 
-9. [Tutoriat 9: Programare Dinamică](Tutoriat%209) 
-   * Principiile Programării Dinamice: substructură optimală și subprobleme suprapuse.
-   * Diferențe între Programare Dinamică, Greedy și Divide et Impera.
-   * Rezolvarea problemelor de optimizare folosind abordarea bottom-up.
-   * Exemple clasice: Fibonacci.
+9. [Tutoriat 9: Programare Dinamică și Backtracking](Tutoriat%209)
+   * **Programare Dinamică**
+     * Substructură optimă și subprobleme suprapuse.
+     * Abordări: bottom-up și top-down (memoizare).
+     * Exemple clasice: Fibonacci, Rod Cutting, Coin Change.
+   * **Backtracking**
+     * Ce este Backtracking și când se folosește.
+     * Diferența dintre Backtracking și forță brută.
+     * Noțiuni cheie:
+       * soluție parțială
+       * soluție completă
+       * condiții de continuare
+     * Forma generală a unui algoritm de tip Backtracking.
+     * Exemple clasice:
+       * Generarea permutărilor
+       * Generarea combinărilor
+       * Coduri PIN cu restricții
+       * Descompunerea unui număr ca sumă
+     * Analiza complexității algoritmilor Backtracking.
+10. [Tutoriat 10: Pregătire Examen și Colocviu](Tutoriat10)
+    * Structura subiectelor de **examen**:
+      * Subiect obligatoriu (funcții, liste, dicționare, complexitate)
+      * Subiecte la alegere: Greedy, Programare Dinamică, Backtracking
+    * Structura subiectelor de **colocviu**:
+      * Fișiere text
+      * Structuri de date (liste, seturi, dicționare)
+      * Funcții cu parametri simpli și variați
+    * Strategii de rezolvare:
+      * Cum recunoști rapid tipul problemei (Greedy / DP / Backtracking)
+      * Ce structură de date alegi
+      * Cum scrii cod clar, ușor de explicat
+    * Rezolvări complete de subiecte:
+      * Subiecte de examen rezolvate pas cu pas
+      * Subiecte de colocviu rezolvate pas cu pas
+   
+
 ---
 
 
